@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class BearChase : MonoBehaviour
 {
     public NavMeshAgent agent;
-
+    public GameObject toEnable;
     public Transform player;
 
     float speedcap = 100000f;
@@ -35,6 +35,7 @@ public class BearChase : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            toEnable.SetActive(true);
             Debug.Log("Lose");
         }
     }
