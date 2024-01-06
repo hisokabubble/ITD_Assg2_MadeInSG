@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class UISetActive : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject activeGameObject;
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player entered");
+            activeGameObject.SetActive(true);
+        }
         
     }
 }
